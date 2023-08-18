@@ -26,8 +26,11 @@ $(".restart").on("click", function(){
     setTimeout(function(){
         $(".restart").removeClass("pressed")
     }, 100);
-    $("h1").text("Game Over, Press Any Key to Restart");
-    startOver();
+    if(!started){
+        $("h1").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
 });
 
 
